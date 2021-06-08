@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  mongodb:
+    image: "mongo:3.0"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: qwe123!@#
+    volumes:
+      - type: bind
+        source: ./data/db
+        target: /data/db
+    container_name: "mongodb_local"
+    ports:
+      - "27017:27017"
